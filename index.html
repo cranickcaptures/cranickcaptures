@@ -6,99 +6,97 @@
   <title>Cranick Captures</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <style>
-    /* ===== Body & Global Styles ===== */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: #1e1e1e; /* dark background */
-      color: #f4f4f4;
+      background: #f2f4f6; /* light grey background */
+      color: #1e1e1e;
+      overflow-x: hidden;
     }
-    a {
-      text-decoration: none;
-    }
-
-    /* ===== Header ===== */
+    a { text-decoration: none; }
+    
+    /* Header */
     header {
-      background: linear-gradient(135deg, #1f1f1f, #444);
+      background: linear-gradient(135deg, #0d3b45, #119da4);
       color: #fff;
       text-align: center;
-      padding: 80px 20px;
+      padding: 100px 20px;
     }
     header h1 {
-      margin: 0;
       font-family: 'Montserrat', sans-serif;
-      font-size: 3.5rem;
-      letter-spacing: 1px;
+      font-size: 4rem;
+      margin: 0;
+      letter-spacing: 2px;
     }
     header p {
-      font-size: 1.2rem;
-      margin-top: 12px;
-      color: #ccc;
+      font-size: 1.4rem;
+      margin-top: 15px;
+      color: #d0f0f5;
     }
-
-    /* ===== Sections ===== */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+    .header-buttons {
+      margin-top: 30px;
     }
-    h2 {
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      color: #f0a500; /* highlight color */
-      text-transform: uppercase;
-    }
-
-    /* ===== Contact Buttons ===== */
-    .contact-info {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    .contact-info a {
+    .header-buttons a {
       display: inline-block;
-      margin: 10px 20px;
-      padding: 14px 26px;
-      background: #f0a500;
-      color: #1e1e1e;
+      margin: 0 15px;
+      padding: 14px 28px;
+      background: #d0f0f5;
+      color: #0d3b45;
       font-weight: 700;
       border-radius: 8px;
       transition: all 0.3s;
     }
-    .contact-info a:hover {
-      background: #d18f00;
-      color: #fff;
+    .header-buttons a:hover {
+      background: #0d3b45;
+      color: #d0f0f5;
     }
 
-    /* ===== Packages ===== */
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem;
+      margin-bottom: 50px;
+      text-align: center;
+      color: #119da4;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Packages */
     .package {
-      background: #2b2b2b;
-      padding: 30px 35px;
-      margin-bottom: 25px;
+      background: #fff;
+      padding: 35px 30px;
+      margin-bottom: 30px;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .package:hover {
       transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
     }
     .package h3 {
-      margin-top: 0;
-      color: #f0a500;
+      color: #0d3b45;
       font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
       font-size: 1.6rem;
     }
     .package p {
-      margin: 8px 0;
+      color: #444;
       line-height: 1.6;
-      color: #ccc;
+      margin: 8px 0;
     }
 
-    /* ===== Portfolio ===== */
+    /* Portfolio */
     .portfolio {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -109,83 +107,101 @@
       width: 100%;
       border-radius: 15px;
       object-fit: cover;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-      transition: transform 0.4s;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      transition: transform 0.4s, box-shadow 0.4s;
     }
     .portfolio img:hover {
       transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
-    /* ===== Footer ===== */
+    /* Footer */
     footer {
       text-align: center;
       padding: 50px 20px;
-      background: #111;
-      color: #ccc;
+      background: #0d3b45;
+      color: #d0f0f5;
       font-size: 0.95rem;
+    }
+
+    /* AOS animation adjustments */
+    [data-aos] {
+      opacity: 0;
+      transition-property: transform, opacity;
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Header -->
+  <header data-aos="fade-down">
     <h1>Cranick Captures</h1>
     <p>📸 Sports • Cars • Portraits</p>
-  </header>
-
-  <section>
-    <h2>Contact / Booking</h2>
-    <div class="contact-info">
+    <div class="header-buttons">
       <a href="https://instagram.com/cranickcaptures" target="_blank">DM on Instagram</a>
       <a href="mailto:cranickcaptures@gmail.com">Email Me</a>
     </div>
+  </header>
 
-    <h2>Packages & Pricing</h2>
-    <div class="package">
+  <!-- Packages Section -->
+  <section>
+    <h2 data-aos="fade-up">Packages & Pricing</h2>
+    <div class="package" data-aos="fade-up" data-aos-delay="100">
       <h3>Team / Session Shoot – $40</h3>
       <p>10–15 edited photos delivered digitally</p>
       <p>Optional: Add graphics $15 per graphic (discounted from $20 standalone)</p>
     </div>
 
-    <div class="package">
+    <div class="package" data-aos="fade-up" data-aos-delay="200">
       <h3>Individual Player Shoot – $30</h3>
       <p>10 edited photos delivered digitally</p>
       <p>Optional: Add graphics $15 per graphic (discounted from $20 standalone)</p>
     </div>
 
-    <div class="package">
+    <div class="package" data-aos="fade-up" data-aos-delay="300">
       <h3>Car Feature Shoot – $35–$40</h3>
       <p>15 edited photos delivered digitally</p>
       <p>Optional: Add graphics $15 per graphic (discounted from $20 standalone)</p>
     </div>
 
-    <div class="package">
-      <h3>Portrait / Individual / Other Photos – $30</h3>
+    <div class="package" data-aos="fade-up" data-aos-delay="400">
+      <h3>Portrait / Other Photos – $30</h3>
       <p>10–15 edited photos delivered digitally</p>
       <p>Optional: Add graphics $15 per graphic (discounted from $20 standalone)</p>
     </div>
 
-    <div class="package">
+    <div class="package" data-aos="fade-up" data-aos-delay="500">
       <h3>Just Graphics – $20 per graphic</h3>
       <p>Standalone graphics for social media, posts, or highlights</p>
     </div>
   </section>
 
+  <!-- Portfolio Section -->
   <section>
-    <h2>Example Photos</h2>
+    <h2 data-aos="fade-up">Example Photos</h2>
     <div class="portfolio">
-      <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Example Photo 1">
-      <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Example Photo 2">
-      <img src="https://via.placeholder.com/300x200?text=Photo+3" alt="Example Photo 3">
-      <img src="https://via.placeholder.com/300x200?text=Photo+4" alt="Example Photo 4">
-      <img src="https://via.placeholder.com/300x200?text=Photo+5" alt="Example Photo 5">
-      <img src="https://via.placeholder.com/300x200?text=Photo+6" alt="Example Photo 6">
+      <img src="https://via.placeholder.com/300x200?text=Photo+1" alt="Example Photo 1" data-aos="zoom-in" data-aos-delay="100">
+      <img src="https://via.placeholder.com/300x200?text=Photo+2" alt="Example Photo 2" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://via.placeholder.com/300x200?text=Photo+3" alt="Example Photo 3" data-aos="zoom-in" data-aos-delay="300">
+      <img src="https://via.placeholder.com/300x200?text=Photo+4" alt="Example Photo 4" data-aos="zoom-in" data-aos-delay="400">
+      <img src="https://via.placeholder.com/300x200?text=Photo+5" alt="Example Photo 5" data-aos="zoom-in" data-aos-delay="500">
+      <img src="https://via.placeholder.com/300x200?text=Photo+6" alt="Example Photo 6" data-aos="zoom-in" data-aos-delay="600">
     </div>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer data-aos="fade-up">
     &copy; 2025 Cranick Captures | Contact: cranickcaptures@gmail.com
   </footer>
+
+  <!-- AOS JS for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 
 </body>
 </html>
